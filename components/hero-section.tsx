@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react"
+import Image from "next/image"
 
 export function HeroSection() {
   const [text, setText] = useState("")
-  const fullText = "AI Engineer & Machine Learning Specialist"
+  const fullText = "AI & Software Enginner"
 
   useEffect(() => {
     let i = 0
@@ -22,6 +23,14 @@ export function HeroSection() {
     return () => clearInterval(timer)
   }, [])
 
+  // CV download function
+  function downloadCV() {
+      const link = document.createElement("a");
+      link.href = "/resume.pdf";
+      link.download = "Thamindu_Wijerathne_CV.pdf";
+      link.click();
+  }
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background */}
@@ -33,16 +42,18 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          {/* <img
-            src="/professional-ai-engineer-headshot.png"
+          <Image 
+            src="/profile_pic.png"
             alt="AI Engineer Profile"
-            className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-primary/20 shadow-2xl"
-          /> */}
+            className="rounded-full mx-auto shadow-2xl mt-10"
+            width={300}          // Required
+            height={300}         // Required
+          />
         </div>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance mt-[-40px]">
           Hi, I&apos;m{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Alex Chen</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Thamindu</span>
         </h1>
 
         <div className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 h-12 flex items-center justify-center">
@@ -51,27 +62,27 @@ export function HeroSection() {
         </div>
 
         <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty">
-          Transforming complex data into intelligent solutions. Specializing in deep learning, computer vision, and
-          natural language processing with 5+ years of experience.
+          Transforming complex data into intelligent solutions. Specializing in Software engineering, deep learning, computer vision, and
+          natural language processing.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
             View My Work
           </Button>
-          <Button variant="outline" size="lg" className="px-8 py-3 bg-transparent">
+          <Button variant="outline" size="lg" className="px-8 py-3 bg-transparent hover:bg-primary/90" onClick={downloadCV}>
             Download Resume
           </Button>
         </div>
 
         <div className="flex justify-center space-x-6 mb-12">
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href="https://github.com/Thamindu-wijerathne" className="text-muted-foreground hover:text-primary transition-colors">
             <Github className="w-6 h-6" />
           </a>
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href="https://www.linkedin.com/in/thamindu-wijerathne-a2a6a12a9/" className="text-muted-foreground hover:text-primary transition-colors">
             <Linkedin className="w-6 h-6" />
           </a>
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href="mailto:Thamindu12ku@gmail.com" className="text-gray-500 hover:text-blue-500 transition-colors">
             <Mail className="w-6 h-6" />
           </a>
         </div>
