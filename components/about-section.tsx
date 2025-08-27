@@ -54,17 +54,17 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              With over 5 years of experience in AI and machine learning, I've had the privilege of working on
+              With over 5 years of experience in AI and machine learning, I&apos;ve had the privilege of working on
               cutting-edge projects that span from research to production. My journey began with a PhD in Computer
               Science, focusing on deep learning architectures for computer vision.
             </p>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               I believe in the transformative power of AI to solve complex challenges across industries. From healthcare
-              diagnostics to autonomous systems, I'm driven by the potential to create intelligent solutions that make a
+              diagnostics to autonomous systems, I&apos;m driven by the potential to create intelligent solutions that make a
               meaningful impact.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not training models or optimizing algorithms, you'll find me contributing to open-source
+              When I&apos;m not training models or optimizing algorithms, you&apos;ll find me contributing to open-source
               projects, mentoring aspiring AI engineers, or exploring the latest research papers.
             </p>
           </div>

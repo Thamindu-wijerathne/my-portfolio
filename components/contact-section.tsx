@@ -87,9 +87,9 @@ export function ContactSection() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">Let's Work Together</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">Let&apos;s Work Together</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Ready to bring your AI vision to life? Let's discuss how we can collaborate on your next project.
+            Ready to bring your AI vision to life? Let&apos;s discuss how we can collaborate on your next project.
           </p>
         </div>
 

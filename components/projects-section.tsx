@@ -103,7 +103,7 @@ export function ProjectsSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Innovative AI solutions that push the boundaries of what's possible
+            Innovative AI solutions that push the boundaries of what&apos;s possible
           </p>
         </div>
 
@@ -133,11 +133,11 @@ export function ProjectsSection() {
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div className="relative overflow-hidden rounded-t-lg">
-                <img
+                {/* <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
+                /> */}
                 {project.featured && (
                   <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">Featured</Badge>
                 )}

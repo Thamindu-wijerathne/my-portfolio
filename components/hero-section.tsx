@@ -33,15 +33,15 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <img
+          {/* <img
             src="/professional-ai-engineer-headshot.png"
             alt="AI Engineer Profile"
             className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-primary/20 shadow-2xl"
-          />
+          /> */}
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-          Hi, I'm{" "}
+          Hi, I&apos;m{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Alex Chen</span>
         </h1>
 
