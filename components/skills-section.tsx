@@ -1,43 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
-const skillCategories = {
-  "machine-learning": {
-    title: "Machine Learning",
-    skills: [
-      { name: "Deep Learning", level: 95, frameworks: ["TensorFlow", "PyTorch", "Keras"] },
-      { name: "Computer Vision", level: 90, frameworks: ["OpenCV", "YOLO", "ResNet"] },
-      { name: "Natural Language Processing", level: 88, frameworks: ["Transformers", "BERT", "GPT"] },
-      { name: "Reinforcement Learning", level: 82, frameworks: ["Stable Baselines", "Ray RLlib"] },
-      { name: "MLOps", level: 85, frameworks: ["MLflow", "Kubeflow", "DVC"] },
-    ],
-  },
-  programming: {
-    title: "Programming",
-    skills: [
-      { name: "Python", level: 95, frameworks: ["FastAPI", "Django", "Flask"] },
-      { name: "JavaScript/TypeScript", level: 85, frameworks: ["React", "Node.js", "Next.js"] },
-      { name: "Go", level: 78, frameworks: ["Gin", "Echo", "gRPC"] },
-      { name: "Rust", level: 70, frameworks: ["Tokio", "Actix", "Warp"] },
-      { name: "SQL", level: 88, frameworks: ["PostgreSQL", "MongoDB", "Redis"] },
-    ],
-  },
-  cloud: {
-    title: "Cloud & Infrastructure",
-    skills: [
-      { name: "AWS", level: 90, frameworks: ["EC2", "S3", "Lambda", "SageMaker"] },
-      { name: "Google Cloud", level: 85, frameworks: ["Compute Engine", "BigQuery", "Vertex AI"] },
-      { name: "Kubernetes", level: 82, frameworks: ["Docker", "Helm", "Istio"] },
-      { name: "CI/CD", level: 88, frameworks: ["GitHub Actions", "Jenkins", "GitLab"] },
-      { name: "Monitoring", level: 85, frameworks: ["Prometheus", "Grafana", "ELK Stack"] },
-    ],
-  },
-}
 
 const neuralNodes = [
   { id: "python", name: "Python", x: 200, y: 150, category: "core", level: 95 },
@@ -277,7 +240,6 @@ function NeuralNetwork() {
 }
 
 export function SkillsSection() {
-  const [activeTab, setActiveTab] = useState("machine-learning")
 
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/20">
@@ -296,46 +258,6 @@ export function SkillsSection() {
             Interactive visualization showing connections between technologies • Hover over nodes to explore
           </p>
         </div>
-
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            {Object.entries(skillCategories).map(([key, category]) => (
-              <TabsTrigger key={key} value={key} className="text-sm sm:text-base">
-                {category.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
-          {Object.entries(skillCategories).map(([key, category]) => (
-            <TabsContent key={key} value={key}>
-              <div className="grid gap-6">
-                {category.skills.map((skill, index) => (
-                  <Card
-                    key={index}
-                    className="bg-card/50 border-border/50 hover:bg-card/80 transition-all duration-300 hover:scale-[1.02]"
-                  >
-                    <CardHeader className="pb-3">
-                      <div className="flex justify-between items-center">
-                        <CardTitle className="text-lg">{skill.name}</CardTitle>
-                        <span className="text-2xl font-bold text-primary">{skill.level}%</span>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <Progress value={skill.level} className="mb-4" />
-                      <div className="flex flex-wrap gap-2">
-                        {skill.frameworks.map((framework, fIndex) => (
-                          <Badge key={fIndex} variant="outline" className="text-xs">
-                            {framework}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
 
         <div className="mt-16 text-center">
           <div className="inline-flex items-center justify-center w-64 h-64 relative">
